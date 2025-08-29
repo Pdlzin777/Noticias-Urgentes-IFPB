@@ -1,0 +1,18 @@
+{
+  "name": "noticias-urgentes-ifpb",
+  "version": "1.0.0",
+  "description": "Aplicação para web para facilitar a comunicação de noticias de extrema importancia para os alunos de todos os cursos do IFPB campos João Pessoa",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.3"
+  }
+}
