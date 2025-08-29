@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String   // hash bcrypt
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  news      News[]
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model News {
+  id          Int      @id @default(autoincrement())
+  title       String
+  summary     String
+  content     String
+  imageUrl    String?
+  category    String   @default("Urgente")
+  campus      String   @default("João Pessoa")
+  isFeatured  Boolean  @default(false)
+  publishedAt DateTime @default(now())
+  author      User     @relation(fields: [authorId], references: [id])
+  authorId    Int
+}

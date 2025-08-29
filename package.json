@@ -1,18 +1,34 @@
 {
+  "type": "module",
   "name": "noticias-urgentes-ifpb",
   "version": "1.0.0",
-  "description": "Aplicação para web para facilitar a comunicação de noticias de extrema importancia para os alunos de todos os cursos do IFPB campos João Pessoa",
+  "description": "Aplicação web para facilitar a comunicação de notícias urgentes para os alunos de todos os cursos do IFPB campus João Pessoa",
   "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node src/server.js",
+    "prisma": "prisma",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^1.0.0-beta.3"
+    "@prisma/client": "^6.15.0",
+    "bcryptjs": "^3.0.2",
+    "bootstrap": "^5.3.8",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "json-server": "^1.0.0-beta.3",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.1",
+    "prisma": "^6.15.0"
   }
 }
